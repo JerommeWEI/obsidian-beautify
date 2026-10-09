@@ -1,0 +1,159 @@
+{
+  "cascadeColors": true,
+  "colorBackground": true,
+  "palette": [
+    {
+      "id": "Vp2PQAdOILdM5xtzFNzN5",
+      "name": "File",
+      "value": "#6200f5"
+    },
+    {
+      "id": "xB39_KzX3_wsbAAqlafDg",
+      "name": "综合文件夹",
+      "value": "#e1acec"
+    },
+    {
+      "id": "EPVJzYrw7yLsZqjw_CCBu",
+      "name": "Home",
+      "value": "#ffea00"
+    },
+    {
+      "id": "xGj79IqQkWy361T8WmGoP",
+      "name": "专项技术文件夹",
+      "value": "#00ffcc"
+    },
+    {
+      "id": "0XuAV_FbTwAmDwqsb1rw6",
+      "name": "任务待办",
+      "value": "#ff0000"
+    },
+    {
+      "id": "oILHYqukLv6INUu5jeaHV",
+      "name": "Ai 交互",
+      "value": "#ff00f7"
+    },
+    {
+      "id": "tNvJYCvh3VGACLbOaYx2p",
+      "name": "重要",
+      "value": "#00ff2a"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "☀️ Unispectral",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "草稿箱",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "附件仓库",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "模板仓库",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "Jerome Studio/属天楼梯",
+      "color": "Vp2PQAdOILdM5xtzFNzN5"
+    },
+    {
+      "path": "图片仓库",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "学习仓库",
+      "color": "Vp2PQAdOILdM5xtzFNzN5"
+    },
+    {
+      "path": "Excalidraw",
+      "color": "Vp2PQAdOILdM5xtzFNzN5"
+    },
+    {
+      "path": "Jerome Studio",
+      "color": "EPVJzYrw7yLsZqjw_CCBu"
+    },
+    {
+      "path": "技术专项 - 预研/计算光谱",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Ai 交互",
+      "color": "oILHYqukLv6INUu5jeaHV"
+    },
+    {
+      "path": "⚙️ MEMS",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Venus产品",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "工作任务树",
+      "color": "Vp2PQAdOILdM5xtzFNzN5"
+    },
+    {
+      "path": "技术专项 - 预研/新场景应用探索",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "技术专项 - 预研/玉米青贮项目",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Family",
+      "color": "Vp2PQAdOILdM5xtzFNzN5"
+    },
+    {
+      "path": "技术专项 - 预研/Spectrum Lens",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "🏡 Home Page.md",
+      "color": "EPVJzYrw7yLsZqjw_CCBu"
+    },
+    {
+      "path": "☀️ Unispectral/展会",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    },
+    {
+      "path": "技术专项 - 预研",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Jerome Studio/SSD",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Jerome Studio/MS",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Jerome Studio/LC",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "Jerome Studio/Jerome Studio - 任务看板.md",
+      "color": "EPVJzYrw7yLsZqjw_CCBu"
+    },
+    {
+      "path": "Coating",
+      "color": "tNvJYCvh3VGACLbOaYx2p"
+    },
+    {
+      "path": "学习仓库/几何光学",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "学习仓库/物理光学",
+      "color": "xGj79IqQkWy361T8WmGoP"
+    },
+    {
+      "path": "☀️ Unispectral/团队协作",
+      "color": "xB39_KzX3_wsbAAqlafDg"
+    }
+  ]
+}

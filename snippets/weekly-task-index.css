@@ -1,0 +1,203 @@
+/* Weekly task index only: blue compact backlog and yellow weekly planning area. */
+
+.theme-light .workspace-leaf-content:has(.markdown-source-view.weekly-task-index),
+.theme-light .markdown-preview-view.weekly-task-index,
+.theme-light .markdown-source-view.weekly-task-index {
+  --weekly-backlog-bg: rgba(219, 239, 249, 0.72);
+  --weekly-backlog-border: rgba(87, 151, 181, 0.28);
+  --weekly-backlog-shadow: rgba(48, 100, 126, 0.1);
+  --weekly-plan-bg: rgba(255, 247, 204, 0.66);
+  --weekly-plan-border: rgba(188, 157, 59, 0.24);
+  --weekly-plan-shadow: rgba(122, 100, 30, 0.08);
+}
+
+.theme-dark .workspace-leaf-content:has(.markdown-source-view.weekly-task-index),
+.theme-dark .markdown-preview-view.weekly-task-index,
+.theme-dark .markdown-source-view.weekly-task-index {
+  --weekly-backlog-bg: rgba(39, 68, 82, 0.72);
+  --weekly-backlog-border: rgba(126, 183, 207, 0.28);
+  --weekly-backlog-shadow: rgba(0, 0, 0, 0.2);
+  --weekly-plan-bg: rgba(82, 72, 34, 0.68);
+  --weekly-plan-border: rgba(219, 190, 96, 0.24);
+  --weekly-plan-shadow: rgba(0, 0, 0, 0.18);
+}
+
+/* Reading view: the Dataview result is the complete backlog panel. */
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-h2:has(> h2[data-heading="待办项"])
+  > h2 {
+  margin-bottom: 1.3rem;
+}
+
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-pre:has(.block-language-dataviewjs) {
+  box-sizing: border-box;
+  margin-block: 0 1rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--weekly-backlog-bg);
+  border: 1px solid var(--weekly-backlog-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--weekly-backlog-shadow),
+    inset 0 1px rgba(255, 255, 255, 0.32);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+}
+
+/* Keep source mode visually consistent when Dataview renders in Live Preview. */
+.markdown-source-view.weekly-task-index .block-language-dataviewjs {
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  background-color: var(--weekly-backlog-bg);
+  border: 1px solid var(--weekly-backlog-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--weekly-backlog-shadow),
+    inset 0 1px rgba(255, 255, 255, 0.24);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+}
+
+/* A denser task rhythm overrides the vault-wide relaxed note line height. */
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs {
+  --line-height-normal: 1.3;
+  line-height: 1.3;
+}
+
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs
+  h4 {
+  margin-block: 0.55rem 0.18rem;
+  line-height: 1.3;
+}
+
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs
+  .dataview.result-group,
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs
+  ul.contains-task-list {
+  margin-block: 0.08rem 0.35rem;
+}
+
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs
+  li {
+  margin-block: 0;
+  padding-block: 0.1rem;
+  line-height: 1.3;
+}
+
+:is(
+    .weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .block-language-dataviewjs
+  ul.contains-task-list
+  ul {
+  margin-block: 0.06rem;
+}
+
+/* Reading view: every block below the divider forms one continuous yellow panel. */
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-hr
+  ~ :not(.mod-footer) {
+  display: flow-root;
+  box-sizing: border-box;
+  margin-block: 0;
+  padding-inline: 1.1rem;
+  background-color: var(--weekly-plan-bg);
+  border-inline: 1px solid var(--weekly-plan-border);
+  -webkit-backdrop-filter: blur(14px) saturate(110%);
+  backdrop-filter: blur(14px) saturate(110%);
+}
+
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-hr
+  + :not(.mod-footer) {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--weekly-plan-border);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 8px 24px var(--weekly-plan-shadow);
+}
+
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-hr
+  ~ :not(.mod-footer):has(+ .mod-footer) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--weekly-plan-border);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px var(--weekly-plan-shadow);
+}
+
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-hr
+  ~ .el-h2
+  h2 {
+  margin-block: 0;
+  padding-block: 0.85rem 0.35rem;
+}
+
+:is(
+    .markdown-preview-view.weekly-task-index,
+    .workspace-leaf-content:has(.markdown-source-view.weekly-task-index)
+      .markdown-preview-view
+  )
+  .markdown-preview-sizer
+  > .el-hr
+  ~ .el-ul
+  > ul {
+  margin-block: 0;
+  padding-block: 0.2rem 0.65rem;
+}

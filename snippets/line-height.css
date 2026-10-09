@@ -1,0 +1,25 @@
+/* 编辑模式下的行间距 */
+.cm-s-obsidian .cm-line {
+    line-height: 1.8; /* 行间距 */
+}
+
+.nav-folder-title {
+    font-weight: 100;
+}
+
+.theme-dark .nav-folder-title {
+    color: white;
+}
+
+.theme-light .nav-folder-title {
+    color: black;
+}
+
+/* 有颜色背景的文件/文件夹 → 文件名黄色加粗 */
+.nav-files-container .file-color-type-background > .nav-file-title,
+.nav-files-container .file-color-type-background > .nav-folder-title,
+.nav-files-container .file-color-type-background.file-color-cascade .nav-file-title,
+.nav-files-container .file-color-type-background.file-color-cascade .nav-folder-title {
+    color: #1d1d1f;
+    font-weight: 700;
+}

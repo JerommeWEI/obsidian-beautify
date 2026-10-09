@@ -1,0 +1,48 @@
+/* Keep the active and multi-selected rows visible over File Color backgrounds. */
+
+.theme-light {
+  --file-tree-selected-overlay: rgba(111, 189, 231, 0.34);
+  --file-tree-active-overlay: rgba(88, 177, 225, 0.56);
+  --file-tree-selected-marker: rgba(44, 142, 197, 0.72);
+  --file-tree-active-marker: rgb(33, 132, 189);
+}
+
+.theme-dark {
+  --file-tree-selected-overlay: rgba(69, 147, 191, 0.34);
+  --file-tree-active-overlay: rgba(83, 171, 219, 0.5);
+  --file-tree-selected-marker: rgba(112, 193, 235, 0.78);
+  --file-tree-active-marker: rgb(134, 208, 245);
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  .tree-item-self:is(.nav-file-title, .nav-folder-title).is-selected {
+  background-image: linear-gradient(
+    var(--file-tree-selected-overlay),
+    var(--file-tree-selected-overlay)
+  ) !important;
+  box-shadow: inset 2px 0 0 var(--file-tree-selected-marker);
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active,
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  .tree-item-self.nav-folder-title.file-tree-folder-selected {
+  background-image: linear-gradient(
+    var(--file-tree-active-overlay),
+    var(--file-tree-active-overlay)
+  ) !important;
+  box-shadow: inset 3px 0 0 var(--file-tree-active-marker);
+}
+
+.workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container
+  .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active.is-selected {
+  background-image: linear-gradient(
+    var(--file-tree-active-overlay),
+    var(--file-tree-active-overlay)
+  ) !important;
+  box-shadow: inset 3px 0 0 var(--file-tree-active-marker);
+}

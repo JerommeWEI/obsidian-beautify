@@ -1,0 +1,22 @@
+{
+  "interfaceFontFamily": "思源黑体",
+  "textFontFamily": "Times New Roman,思源黑体",
+  "monospaceFontFamily": "3DS Fonticon",
+  "baseFontSizeAction": false,
+  "baseFontSize": 16,
+  "theme": "moonstone",
+  "cssTheme": "",
+  "enabledCssSnippets": [
+    "line-height",
+    "wider-page",
+    "apple-dashboard",
+    "quiet-notes",
+    "image-centered",
+    "wide-tables",
+    "graph-background",
+    "weekly-task-index",
+    "frosted-notes",
+    "file-tree-selection"
+  ],
+  "accentColor": ""
+}

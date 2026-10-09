@@ -1,0 +1,40 @@
+/* ============================================================
+ * 嵌入图片默认居中  (image-centered.css)
+ * 作用范围：阅读视图 (Reading View) + 实时阅览 (Live Preview) + 源码模式
+ * 效果：仓库内所有嵌入图片 ![[...]] 与外链图片 ![]() 默认以 1000px
+ * 宽度水平居中显示；在窄窗口中自动缩小以避免溢出。
+ *
+ * 说明：图片以「块级」方式呈现并独占一行居中。
+ *   - 独占一行的嵌入图片 → 正常居中 ✅
+ *   - 夹在文字中间的行内图片 → 也会换行居中（副作用）
+ *   - emoji 表情 → 已排除，保持行内不变
+ *
+ * 若发现没生效（被其他 snippet/主题覆盖），可把下面两条
+ * 属性值都加上 !important。
+ * ============================================================ */
+
+/* 阅读视图（新旧版本类名均兼容） */
+.markdown-reading-view img,
+.markdown-preview-view img,
+
+/* 实时阅览 / 源码模式 */
+.markdown-source-view.is-live-preview img,
+.markdown-source-view img {
+  display: block;
+  width: 1000px;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Obsidian 原生与 Twemoji 外链图标保持行内，不应用图片默认宽度 */
+img.emoji,
+img[src*="twemoji"] {
+  display: inline !important;
+  width: 1em !important;
+  max-width: none !important;
+  height: 1em !important;
+  margin: 0 !important;
+  vertical-align: -0.1em;
+}

@@ -1,0 +1,7 @@
+/* ========================================
+   Wider Page — 拓宽页面宽度
+   ======================================== */
+
+.markdown-preview-view .markdown-preview-section {
+  --file-line-width: 1200px;
+}

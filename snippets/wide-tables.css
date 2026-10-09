@@ -1,0 +1,25 @@
+/* ============================================================
+ * 表格与纸张同宽并居中  (wide-tables.css)
+ * 作用范围：阅读视图 (Reading View) + 实时阅览 (Live Preview) + 源码模式
+ * 效果：仓库内所有 Markdown 表格宽度撑满内容区（与正文文字同宽，
+ *       即 wider-page.css 设定的 --file-line-width: 1200px），并水平居中。
+ *
+ * 说明：
+ *   - width:100% → 表格左右边缘与正文对齐（"和纸张同宽"）
+ *   - margin:auto → 当 width<100% 时才生效，自动水平居中；
+ *     若想让表格比纸张窄一点居中，把 100% 改成如 80% 即可。
+ *
+ * 若发现没生效（被其他 snippet/主题覆盖），可把下面属性值加上 !important。
+ * ============================================================ */
+
+/* 阅读视图（新旧版本类名均兼容） */
+.markdown-reading-view table,
+.markdown-preview-view table,
+
+/* 实时阅览 / 源码模式 */
+.markdown-source-view.is-live-preview table,
+.markdown-source-view table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}

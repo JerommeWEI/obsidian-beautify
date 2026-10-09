@@ -1,0 +1,9 @@
+{
+  "id": "folder-pins",
+  "name": "Folder Pins",
+  "version": "1.0.0",
+  "minAppVersion": "1.11.0",
+  "description": "Codex 风格的文件浏览器分区:置顶区在顶部、支持拖动手柄排序文件夹/文件,跨区拖动即置顶/取消置顶。",
+  "author": "Jerome",
+  "isDesktopOnly": true
+}

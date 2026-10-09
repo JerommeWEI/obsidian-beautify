@@ -1,0 +1,262 @@
+/* Folder Pins — Codex 风格分区样式 */
+
+/* 行相对定位,供拖拽指示线使用 */
+.nav-files-container .tree-item {
+  position: relative;
+}
+
+/* ── 药丸圆角统一 + 展开时平滑过渡(避免胶囊→色块突变) ── */
+.nav-files-container .tree-item-self {
+  border-radius: 12px;
+  transition: background-color 80ms ease;
+}
+
+/* ── 缩进引导线:加粗加深 ───────────────────────────── */
+.nav-files-container .tree-item-children {
+  border-left: 2px solid var(--text-muted) !important;
+}
+
+/* ── 折叠箭头 ">":颜色最深、笔触更粗、尺寸加大 ──────── */
+.nav-files-container .tree-item-self .collapse-icon {
+  color: var(--text-normal) !important;
+  opacity: 1 !important;
+  --icon-size: 14px;
+}
+.nav-files-container .tree-item-self .collapse-icon svg {
+  stroke: var(--text-normal) !important;
+  stroke-width: 3.5 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* ── 行间隙:置顶区 6px,非置顶区 4px(= 置顶的 2/3) ── */
+.nav-files-container .tree-item.fp-pinned {
+  padding-top: 3px;
+  padding-bottom: 6px;
+}
+.nav-files-container .tree-item.fp-unpinned {
+  padding-bottom: 4px;
+}
+
+/* ── 色块上下都保留灰色间隔,不影响分界线和相邻行 ── */
+.nav-files-container .tree-item.fp-openrow {
+  padding-bottom: 0;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  transition: background-color 80ms ease;
+}
+.nav-files-container .tree-item.fp-pinned.fp-openrow {
+  padding-bottom: 6px;
+}
+
+/* ── 置顶卡片:淡灰底色 + 大圆角 ───────────────────────
+   颜色 = 侧栏底色调深 4%(更淡),随明暗主题自适应 */
+.nav-files-container .tree-item.fp-pinned {
+  background: color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%);
+}
+.nav-files-container .tree-item.fp-first-pinned {
+  border-radius: 16px 16px 0 0;
+}
+.nav-files-container .tree-item.fp-last-pinned {
+  border-radius: 0 0 16px 16px;
+}
+.nav-files-container .tree-item.fp-first-pinned.fp-last-pinned {
+  border-radius: 16px;
+}
+
+/* ── 置顶区标题:字号加大、滚动吸附,底色与卡片一致 ── */
+.nav-files-container .tree-item.fp-first-pinned::before {
+  content: "置顶";
+  display: flex;
+  align-items: center;
+  height: 26px;
+  margin: 4px 0 2px;
+  padding: 0 12px;
+  font-size: var(--font-ui-small, 13px);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  user-select: none;
+  pointer-events: none;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background: color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ── 分界横线:置顶区与非置顶区之间 ──────────────────
+   不透明底色遮住下方色块,中间黑色加粗横线,形成真正的隔断 */
+.nav-files-container .tree-item.fp-first-unpinned::before {
+  content: "";
+  display: block;
+  height: 18px;
+  margin: 4px 2px 2px;
+  background-color: var(--background-primary);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 7px,
+    var(--text-normal) 7px,
+    var(--text-normal) 10px,
+    transparent 10px,
+    transparent 18px
+  );
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── 嵌套彩色行:底色移到整行绘制,保持与根级同宽 ── */
+.nav-files-container .tree-item.fp-colorrow {
+  background-color: color-mix(in srgb, var(--file-color-color, transparent) 15%, transparent);
+  border-radius: 12px;
+}
+.nav-files-container .tree-item.fp-colorrow > .tree-item-self {
+  background-color: transparent !important;
+}
+
+/* ── 展开的文件夹:连续同色色块 ──────────────────────── */
+.nav-files-container .tree-item.fp-openrow {
+  background-color: color-mix(in srgb, var(--file-color-color, transparent) 15%, transparent);
+  border-radius: 12px;
+}
+
+/* 置顶卡片内的展开色块:左右灰边嵌入卡片 */
+.nav-files-container .tree-item.fp-pinned.fp-openrow {
+  border-left: 3px solid color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%);
+  border-right: 3px solid color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%);
+  border-radius: 12px;
+}
+
+/* 置顶区首行展开色块:标题区域保持卡片灰,色块从标题下方开始
+   (防止色块扩展到"置顶"标签上方) */
+.nav-files-container .tree-item.fp-first-pinned.fp-openrow {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%) 0px,
+    color-mix(in srgb, var(--background-secondary) 96%, var(--text-normal) 4%) 36px,
+    color-mix(in srgb, var(--file-color-color, transparent) 15%, transparent) 36px
+  ) !important;
+  border-radius: 16px 16px 0 0;
+}
+
+/* 父行自身与所有后代行透明,由色块统一着色 */
+.nav-files-container .tree-item.fp-openrow > .tree-item-self,
+.nav-files-container .tree-item.fp-openrow .tree-item .tree-item-self {
+  background-color: transparent !important;
+}
+/* 色块内的选中:整行叠加原生高亮(仅无嵌套子级的行) */
+.nav-files-container .tree-item.fp-openrow .tree-item.is-active:not(:has(.tree-item)) {
+  background-color: rgba(96, 165, 250, 0.22);
+  border-radius: 12px;
+}
+.nav-files-container .tree-item.fp-openrow .tree-item.is-active > .tree-item-self {
+  background-color: transparent !important;
+}
+/* 展开的父行自身被选中:保留原生高亮药丸 */
+.nav-files-container .tree-item.fp-openrow > .tree-item-self.is-active {
+  background-color: rgba(96, 165, 250, 0.22) !important;
+}
+
+/* ── 字体:默认正常,悬停/选中时变粗 ── */
+.nav-files-container .tree-item-self:hover .tree-item-inner,
+.nav-files-container .tree-item-self.is-active .tree-item-inner {
+  font-weight: 700;
+}
+
+/* ── 悬停预览:鼠标悬停 = 选中同款高亮 ───────────────── */
+.nav-files-container .tree-item:not(.fp-openrow .tree-item) > .tree-item-self:hover {
+  background-color: rgba(96, 165, 250, 0.22) !important;
+}
+.nav-files-container .tree-item.fp-openrow .tree-item:not(:has(.tree-item)):hover {
+  background-color: rgba(96, 165, 250, 0.22);
+  border-radius: 12px;
+}
+.nav-files-container .tree-item.fp-openrow > .tree-item-self:hover {
+  background-color: rgba(96, 165, 250, 0.22) !important;
+}
+
+/* ── "展开其余 N 项"按钮 ── */
+.nav-files-container .fp-expand-more {
+  margin: 3px 14px;
+  padding: 3px 12px;
+  text-align: center;
+  font-size: var(--font-ui-small, 13px);
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.nav-files-container .fp-expand-more:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+/* ── 被折叠隐藏的行 ── */
+.nav-files-container .tree-item.fp-hidden-row {
+  display: none !important;
+}
+
+/* ── 已置顶行:图钉标记 ── */
+.nav-files-container .tree-item-self .fp-pin-flag {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: var(--text-faint);
+  opacity: 0.6;
+}
+.nav-files-container .tree-item-self .fp-pin-flag svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ── 拖动手柄:悬停行时出现 ── */
+.nav-files-container .tree-item-self .fp-handle {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 2px;
+  color: var(--text-faint);
+  opacity: 0;
+  cursor: grab;
+  transition: opacity 120ms ease;
+}
+.nav-files-container .tree-item-self .fp-handle svg {
+  width: 12px;
+  height: 12px;
+}
+.nav-files-container .tree-item-self:hover .fp-handle,
+.nav-files-container .tree-item.fp-dragging .fp-handle {
+  opacity: 0.7;
+}
+.nav-files-container .tree-item-self .fp-handle:active {
+  cursor: grabbing;
+  opacity: 1;
+}
+
+/* ── 拖拽中的行 ── */
+.nav-files-container .tree-item.fp-dragging {
+  opacity: 0.35;
+}
+
+/* ── 放置位置指示线 ── */
+.nav-files-container .tree-item.fp-drop-above::after,
+.nav-files-container .tree-item.fp-drop-below::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--interactive-accent);
+  z-index: 20;
+  pointer-events: none;
+}
+.nav-files-container .tree-item.fp-drop-above::after {
+  top: -1px;
+}
+.nav-files-container .tree-item.fp-drop-below::after {
+  bottom: -1px;
+}

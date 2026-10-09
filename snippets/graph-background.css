@@ -1,0 +1,47 @@
+/* 关系图谱 — 深色美学（深背景 + 亮节点/连线/文字）
+   cc-PM 2026-07-27。color groups 已给 11 个主题文件夹彩色，深背景上发光像星空；
+   这里把"默认节点/连线/文字/hover/tag"配成亮色，确保深背景上清晰可见。
+   配色想调就改各 color 值。参考: https://forum.obsidian.md/t/8271 */
+
+/* —— 背景深色 —— */
+.workspace-leaf-content[data-type="graph"],
+.workspace-leaf-content[data-type="graph"] .graph-view,
+.workspace-leaf-content[data-type="graph"] > div {
+  background-color: #1c1c1e !important;
+}
+
+/* —— 默认节点（无 color group 的：孤立/小文件夹等）→ 浅灰白，深背景上发微光 —— */
+.graph-view.color-fill {
+  color: #c8c8d0;
+}
+
+/* —— 节点间连线 → 中灰，深背景上可见但不抢彩色节点 —— */
+.graph-view.color-line {
+  color: #4a4a5a;
+}
+
+/* —— 节点标签文字 → 接近白，清晰 —— */
+.graph-view.color-text {
+  color: #ececec;
+}
+
+/* —— hover 高亮节点 → 纯白，聚焦 —— */
+.graph-view.color-fill-highlight {
+  color: #ffffff;
+}
+
+/* —— hover 高亮连线 → 亮蓝，突出当前关系 —— */
+.graph-view.color-line-highlight {
+  color: #7aa2ff;
+}
+
+/* —— tag 节点（showTags 已开）→ 青亮，区分 tag 枢纽 —— */
+.graph-view.color-fill-tag {
+  color: #5dbcd2;
+}
+
+/* —— 未解析链接节点 → 暗紫，区分 —— */
+.graph-view.color-fill-unresolved {
+  color: #9e8aff;
+  opacity: 0.8;
+}
